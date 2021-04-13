@@ -1,0 +1,24 @@
+<div class="flex-box">
+    <div class="title-text">~ The Crystal Hunt ~</div>
+</div>
+<div class="flex-box">
+    <div class="container">
+        <app-game #GameComponent (gameOver)="onGameOver()" (firstBossClear)="onFirstBossClear()"></app-game>
+        <div class="dialog-mask" [ngClass]="{'nodisplay': !gameover && !clearfirstboss}">
+        </div>
+        <div class="gameover-image-box" [ngClass]="{'nodisplay': !gameover}">
+        </div>
+        <div class="gameover-button-box" [ngClass]="{'nodisplay': !gameover}">
+            <a class="menu-button" (click)="onExitClicked()">Menu</a>
+        </div>
+        <div class="gameover-image-box" [ngClass]="{'nodisplay': !clearfirstboss}">
+        </div>
+        <div class="bossClearContinue-button-box" [ngClass]="{'nodisplay': !clearfirstboss}">
+            <a class="menu-button" (click)="onContinueClicked()">Infinite Mode</a>
+        </div>
+        <div class="bossClearReturn-button-box" [ngClass]="{'nodisplay': !clearfirstboss}">
+            <a class="menu-button" (click)="onExitClicked()">Menu</a>
+        </div>
+        <div style="font-family: 8-bit; position: absolute; left:-1000px; visibility:hidden;">.</div>
+    </div> 
+</div>
